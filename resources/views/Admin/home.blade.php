@@ -9,6 +9,17 @@
     <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2020.3.915/styles/kendo.common.min.css" />
    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2020.3.915/styles/kendo.silver.min.css" />
     <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2020.3.915/styles/kendo.silver.mobile.min.css" />
+    <style>
+    #active
+{
+    font-size: 15px;
+    color:white;
+}
+#inactive{
+   font-size: 15px;
+    color:white;
+}
+</style>
     
 @endsection
 
@@ -37,6 +48,30 @@
         
 
           <div id="Admingrid"></div>
+          <div id="activeWindow" style="display:none">
+             <div class="row" style='overflow:hidden;'>
+        <div class="col-md-12">
+            <label class="label" style='padding-bottom:10px;'>Are you sure make Active member.??</label>
+        </div>
+    </div>
+    <div class="m-t-10 row">
+        <div class="col">
+            <a id="ActiveAction" class="k-button k-primary text-white float-right" data-role="button">OK</a>
+        </div>
+    </div>
+          </div>
+          <div id="InactiveWindow" style="display:none">
+             <div class="row" style='overflow:hidden;'>
+        <div class="col-md-12">
+            <label class="label" style='padding-bottom:10px;'>Are You Want to InActive</label>
+        </div>
+    </div>
+    <div class="m-t-10 row">
+        <div class="col">
+            <a id="InactiveAction" class="k-button k-primary text-white float-right" data-role="button">OK</a>
+        </div>
+    </div>
+          </div>
              
             
 
