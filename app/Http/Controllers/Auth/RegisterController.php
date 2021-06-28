@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\User;
 use App\Role;
-// use App\VerifyUser;
+use App\VerifyUser;
 use App\Mail\VerifyMail;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -104,14 +104,16 @@ class RegisterController extends Controller
             
         ]);
 
-        $verifyUser = VerifyUser::create([
+       /* $verifyUser = VerifyUser::create([
             'user_id' => $user->id,
             'token' => sha1(time())
           ]);
           \Mail::to($user->email)->send(new VerifyMail( $user));
          
           //return view('emails.welcome');
-          return $user;
+          return $user;*/
+          return view('login');
+
        }
 
 
@@ -210,9 +212,7 @@ public function registerusers(Request $request)
 {
 
 
-// dd($request->all());
-    // // 'role' => $request['role'],
-    // 'user_status'=> $value,
+
 
   if(request()->hasFile('profile_picture')){
 
@@ -227,16 +227,25 @@ public function registerusers(Request $request)
         'email' => $request['email'],
         'password' => Hash::make($request['password']),
         'role' => $request['role'],
-        'user_status'=> $value,
         'gender'=>$request['gender'],
         'dob' => $request['dob'],
         'profile_picture'=> $filename,
-        
+        'user_status'=> $value,
         
     ]);
 
-    return view('auth.register');
+   /* $verifyUser = VerifyUser::create([
+        'user_id' => $user->id,
+        'token' => sha1(time())
+      ]);
+      \Mail::to($user->email)->send(new VerifyMail( $user));
+     
+      return view('emails.welcome');
+      //return $user;
+   }*/
+   return redirect('/login');
 }
+
 
     else{
 
@@ -245,13 +254,22 @@ public function registerusers(Request $request)
         'name' => $request['name'],
         'email' => $request['email'],
         'password' => Hash::make($request['password']),
-         'role' => $request['role'],
+        'role' => $request['role'],
         'gender'=>$request['gender'],
         'dob' => $request['dob'],
-         'user_status'=> $value,
+        'user_status'=> $value,
         
     ]);
-    return view('auth.login');
+
+   /* $verifyUser = VerifyUser::create([
+        'user_id' => $user->id,
+        'token' => sha1(time())
+      ]);
+      \Mail::to($user->email)->send(new VerifyMail( $user));
+     
+      return view('emails.welcome');
+      //return $user;*/
+      return redirect('/login');
 
 }
 }

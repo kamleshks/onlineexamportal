@@ -9,6 +9,7 @@ use User;
 use App\VerifyUser;
 use Role;
 use Illuminate\Support\Facades\Auth;
+//namespace Illuminate\Auth\Middleware;
 
 class LoginController extends Controller
 {
@@ -40,6 +41,8 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+        //$this->middleware('preventBackHistory'); 
+       // $this->middleware('auth');
     }
 
     protected function authenticated(Request $request,$user)
@@ -47,7 +50,7 @@ class LoginController extends Controller
         
         
        
-       if(Auth::check() &&  Auth::user()->user_status==1 )
+      /* if(Auth::check() &&  Auth::user()->user_status==1 )
         {
            
             
@@ -56,7 +59,34 @@ class LoginController extends Controller
         }
         
         Auth::logout();
-        return back()->with('warning', 'You need to confirm your account. We have sent you an activation code, please check your email.');
-    
-  }
+        return back()->with('warning', 'You need to confirm your account. We have sent you an activation code, please check your email.');*/
+
+
+        if (Auth::check() && Auth::user()->role == 1) 
+        {
+          return redirect('/admin'); 
+        }
+
+        elseif (Auth::check() && Auth::user()->role == 2) 
+        {
+         return redirect('/teacher');
+        }
+
+      else
+       {
+        return redirect('/student');
+       }
+       
+    }
+
+    public function logout(Request $request) {
+         Auth::logout();
+        return redirect('/login');
+     }
+    /*public function logout(Request $request ) {
+    $request->session()->flush();
+    Auth::logout();
+    return Redirect('/login');
+    }*/
+ 
 }
