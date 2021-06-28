@@ -8,8 +8,7 @@ use\Illuminate\Http\Request;
 use User;
 use App\VerifyUser;
 use Role;
-use Illuminate\Support\Facades\Auth;
-//namespace Illuminate\Auth\Middleware;
+use Auth;
 
 class LoginController extends Controller
 {
@@ -41,8 +40,8 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
-        //$this->middleware('preventBackHistory'); 
-       // $this->middleware('auth');
+        //$this->middleware('prevent-back-history'); 
+        //$this->middleware('auth');
     }
 
     protected function authenticated(Request $request,$user)

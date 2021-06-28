@@ -29,7 +29,7 @@
   <!-- DataTables -->
   <!--<link rel="stylesheet" href="{{asset('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
   <link rel="stylesheet" href="{{asset('plugins/datatables-responsive/css/responsive.bootstrap4.min.css')}}">-->
-  <link rel="stylesheet" href="{{asset('dist/css/bootstrap-tagsinput.css')}}">
+ <!-- <link rel="stylesheet" href="{{asset('dist/css/bootstrap-tagsinput.css')}}">-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   
   
@@ -37,6 +37,7 @@
   
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
+
 <!--<body class="hold-transition sidebar-mini sidebar-collapse" style="height:100%;">-->
 <div class="wrapper">
 
@@ -791,7 +792,7 @@
 
 <script src="{{asset('dist/js/demo.js')}}"></script>
 
-<script src="{{asset('dist/js/bootstrap-tagsinput.js')}}"></script>
+<!--<script src="{{asset('dist/js/bootstrap-tagsinput.js')}}"></script>-->
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 
 <script src="https://kendo.cdn.telerik.com/2020.3.915/js/kendo.all.min.js"></script>

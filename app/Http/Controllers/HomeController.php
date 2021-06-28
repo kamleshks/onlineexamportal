@@ -14,6 +14,7 @@ class HomeController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        //$this->middleware('prevent-back-history');
     }
 
     /**
@@ -24,5 +25,11 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
+    }
+    
+    public function index1(Request $request ) {
+   // $request->session()->flush();
+    Auth::logout();
+    return Redirect('/login');
     }
 }

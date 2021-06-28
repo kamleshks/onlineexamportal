@@ -140,23 +140,9 @@ class RegisterController extends Controller
           //return view('emails.welcome');
           return $user;
       }
+}
 
-
-
-
-
-        
-
-      }
-
-
-
-
-
-
-
-
-      public function register(Request $request)
+ public function register(Request $request)
     {
         $this->validator($request->all())->validate();
 
@@ -260,7 +246,7 @@ public function registerusers(Request $request)
         'user_status'=> $value,
         
     ]);
-
+    return redirect('/login');
    /* $verifyUser = VerifyUser::create([
         'user_id' => $user->id,
         'token' => sha1(time())
@@ -269,7 +255,6 @@ public function registerusers(Request $request)
      
       return view('emails.welcome');
       //return $user;*/
-      return redirect('/login');
 
 }
 }

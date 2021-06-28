@@ -19,14 +19,18 @@
 /*Route::get('/login', function () {
     return view('Admin/admin_login');
 });*/
+Route::group(['middleware' => 'prevent-back-history'],function(){
+    Route::get('/', function () {
+    return view('auth.login');
+});
 Route::get('/admin', function () {
-    return view('Admin/home');
+    return view('Admin.home');
 });
 Route::get('/teacher', function () {
-    return view('Admin/teacher');
+    return view('Admin.teacher');
 });
 Route::get('/student', function () {
-    return view('Admin/student');
+    return view('Admin.student');
 });
 
 
@@ -34,11 +38,15 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('register', 'Auth\RegisterController@registerusers');
-Route::get('/logout', 'Auth\LoginController@logout');
+//Route::get('/logout', 'Auth\LoginController@logout');
 
-/*Route::group(['middleware' => 'prevent-back-history'],function(){
-    Auth::routes();
-   Route::get('/login', function () {
-    return view('Auth/login');
+
+ 
+ Route::get('/logout', 'HomeController@index1');
+
 });
-});*/
+ Route::get('/readAdmin', 'adminController@readAdminData');
+//  Route::get('/readRole', 'RoleController@readRole');
+
+
+
