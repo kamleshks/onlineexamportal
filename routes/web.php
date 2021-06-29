@@ -46,7 +46,8 @@ Route::post('register', 'Auth\RegisterController@registerusers');
 
 });
  Route::get('/readAdmin', 'adminController@readAdminData');
-//  Route::get('/readRole', 'RoleController@readRole');
+//Route::get('/activate','VerifyUserController@activeUser');
+Route::post('/activate','VerifyUserController@activeUser');
 
 
 

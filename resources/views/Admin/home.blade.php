@@ -48,6 +48,7 @@
         
 
           <div id="Admingrid"></div>
+          <div id="dialog"></div>
           <div id="activeWindow" style="display:none">
              <div class="row" style='overflow:hidden;'>
         <div class="col-md-12">

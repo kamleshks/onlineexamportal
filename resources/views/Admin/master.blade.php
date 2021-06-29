@@ -201,6 +201,12 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
+              
+    <!--HTML for all logged in users-->
+        @can('isAdmin')
+        <!-- HTML for admins only-->
+    
+
           <li class="nav-item has-treeview menu-open">
             <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -210,6 +216,7 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
+
               <li class="nav-item">
                 <a href="#" class="nav-link">
                   <i class="nav-icon fas fa-th"></i>
@@ -242,6 +249,17 @@
               </li>
             </ul>
           </li>
+          @endcan
+        <!-- HTML for non-admins only-->
+        @can('isTeacher')
+        <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-th"></i>
+                  <p>Teachers DashBoard</p>
+                </a>
+              </li>
+    @endcan
+
          
       </nav>
       <!-- /.sidebar-menu -->
