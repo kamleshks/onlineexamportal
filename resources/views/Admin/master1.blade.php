@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!--<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">-->
   <title>Online Exam| Dashboard</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -257,59 +257,8 @@
                   <i class="nav-icon fas fa-th"></i>
                   <p>Teachers DashBoard</p>
                 </a>
-        </li>
-        <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="nav-icon fas fa-th"></i>
-                  <p>Student</p>
-                </a>
-        </li>
-        
-        <li class="nav-item" id="Admingrid">         
-                 <a href="#" class="nav-link">
-                  <i class="nav-icon fas fa-th"></i>
-                  <p>Teacher</p>
-                </a>
-        </li>
-
-        <!-- <li class="nav-item">
-           <a class="nav-link"  grid-id="Admingrid">Teacher</a>
-         </li> -->
-        
-        <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="nav-icon fas fa-th"></i>
-                  <p>Exam</p>
-                </a>
-        </li>
-        <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="nav-icon fas fa-th"></i>
-                  <p>Questions</p>
-                </a>
-        </li>
-        <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="nav-icon fas fa-th"></i>
-                  <p>Schedul Exam</p>
-                </a>
-        </li>
+              </li>
     @endcan
-    @can('isStudent')
-       
-        <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="nav-icon fas fa-th"></i>
-                  <p>View Result</p>
-                </a>
-        </li>
-        <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="nav-icon fas fa-th"></i>
-                  <p>Exam</p>
-                </a>
-        </li>
-       @endcan
 
          
       </nav>

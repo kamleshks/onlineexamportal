@@ -15,7 +15,7 @@
         <body>
 
           
-         <h1> You are activated by Admin......!</h1>
+         <h1> You are Deactivated by Admin......!</h1>
 
         </body>
         </html>

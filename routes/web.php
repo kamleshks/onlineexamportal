@@ -46,8 +46,11 @@ Route::post('register', 'Auth\RegisterController@registerusers');
 
 });
  Route::get('/readAdmin', 'adminController@readAdminData');
-//Route::get('/activate','VerifyUserController@activeUser');
+Route::get('/activate','VerifyUserController@activeUser');
 Route::post('/activate','VerifyUserController@activeUser');
+Route::get('/deactivate','VerifyUserController@deactiveUser');
+Route::post('/deactivate','VerifyUserController@deactiveUser');
+
 
 
 

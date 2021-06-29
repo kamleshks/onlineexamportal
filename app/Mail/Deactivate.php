@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class Activate extends Mailable
+class Deactivate extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -16,11 +16,11 @@ class Activate extends Mailable
      *
      * @return void
      */
-     public function __construct($user)
+    public function __construct($user)
     {
-        $this->user = $user;
-        //dd($this->user);
+         $this->user = $user;
     }
+
     /**
      * Build the message.
      *
@@ -28,6 +28,6 @@ class Activate extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.activate');
+      return $this->view('emails.deactivate');
     }
 }

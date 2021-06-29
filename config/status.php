@@ -2,9 +2,11 @@
 
 return [
     
-           'active' =>1,
-            'activation_pending'=>2,
-              'deactivate'=>3,
+                 'userStatus'=>['active' =>1,
+                  'activation_pending'=>2,
+                  'deactivate'=>3,
+                   ]
+                ,
                
               
               'activation_link' => [
