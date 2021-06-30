@@ -23,12 +23,12 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
     Route::get('/', function () {
     return view('auth.login');
 });
-Route::get('/admin', function () {
+/*Route::get('/admin', function () {
     return view('Admin.home');
-});
-Route::get('/teacher', function () {
+});*/
+/*Route::get('/teacher', function () {
     return view('Admin.teacher');
-});
+});*/
 Route::get('/student', function () {
     return view('Admin.student');
 });
@@ -45,8 +45,12 @@ Route::post('register', 'Auth\RegisterController@registerusers');
  Route::get('/logout', 'HomeController@index1');
 
 });
+Route::get('/teacher', 'adminController@Teacher');
+Route::get('/admin', 'adminController@Admin');
+
 Route::post('/readTeacher', 'adminController@readAdminData');
 Route::post('/readStudent', 'adminController@readStudentData');
+
 
 Route::get('/readAdmin', 'adminController@readAdminData');
 Route::get('/activate','VerifyUserController@activeUser');

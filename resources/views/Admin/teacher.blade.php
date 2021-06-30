@@ -51,9 +51,14 @@
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner">
-                <h3>150</h3>
+                
 
-                <p>New Orders</p>
+                <p>Active Teacher</p>
+                @foreach ($actives as $a)
+                   {{$a->active}}
+                 @endforeach
+                
+                 
               </div>
               <div class="icon">
                 <i class="ion ion-bag"></i>
@@ -66,9 +71,12 @@
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3>53<sup style="font-size: 20px">%</sup></h3>
+                  <p>Inactive Teacher</p>
+                  @foreach ($actives as $a)
+                   {{$a->inactive}}
+                 @endforeach
 
-                <p>Bounce Rate</p>
+              
               </div>
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
@@ -84,6 +92,10 @@
                 <h3>44</h3>
 
                 <p>User Registrations</p>
+                 @foreach ($roles as $a)
+                   {{$a->teacher}}
+                 @endforeach
+
               </div>
               <div class="icon">
                 <i class="ion ion-person-add"></i>
@@ -99,6 +111,10 @@
                 <h3>65</h3>
 
                 <p>Unique Visitors</p>
+                 @foreach ($roles as $a)
+                   {{$a->student}}
+                 @endforeach
+
               </div>
               <div class="icon">
                 <i class="ion ion-pie-graph"></i>

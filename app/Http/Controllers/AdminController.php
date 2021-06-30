@@ -21,21 +21,47 @@ class AdminController extends Controller
 
     public function Admin()
     {
-      $user= User::Where('role',1)
-              ->get();
+     $actives= DB::table('users')
+        ->select(
+             DB::raw('IF((user_status = 1), count(id), Null) as active'),
+            DB::raw('IF((user_status = 2), count(id), Null) as inactive'),
+            
+         )->groupBy('user_status',)->get();
+
+          $roles= DB::table('users')
+        ->select(
+             DB::raw('IF((role = 2), count(id), Null) as teacher'),
+            DB::raw('IF((role= 3), count(id), Null) as student'),
+            
+         )->groupBy('role',)->get();
              
+          //dd($actives);   
              
-        return view('users.index', compact('user'));
+          //dd($actives,$roles);   
+        return view('Admin.home', compact('actives','roles'));
     }
     public function Teacher()
     {
-    $user= User::Where('role',2)
-              ->get();
+   $actives= DB::table('users')
+        ->select(
+             DB::raw('IF((user_status = 1), count(id), Null) as active'),
+            DB::raw('IF((user_status = 2), count(id), Null) as inactive'),
+            
+         )->groupBy('user_status',)->get();
+
+          $roles= DB::table('users')
+        ->select(
+             DB::raw('IF((role = 2), count(id), Null) as teacher'),
+            DB::raw('IF((role= 3), count(id), Null) as student'),
+            
+         )->groupBy('role',)->get();
              
+          //dd($actives);   
              
-        return view('users.index', compact('user'));
+          //dd($actives,$roles);   
+        return view('Admin.teacher', compact('actives','roles'));
     }
-    }
+    
     public function Student()
     {
 

@@ -262,16 +262,16 @@
                 </a>
         </li>
         <li class="nav-item">
-                <a href="#student" class="nav-link  teachers">
+                <a href="#teacher" class="nav-link  teachers">
                   <i class="nav-icon fas fa-th" data-toggle="tab" id="student"></i>
-                  <p>Student</p>
+                  <p>Teacher</p>
                 </a>
         </li>
         
         <li class="nav-item ">         
-                 <a href="#teacher" class="nav-link teachers" data-toggle="tab" id="teacher">
+                 <a href="#student" class="nav-link teachers" data-toggle="tab" id="teacher">
                   <i class="nav-icon fas fa-th"></i>
-                  <p>Teacher</p>
+                  <p>Student</p>
                 </a>
         </li>
 

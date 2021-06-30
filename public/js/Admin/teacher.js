@@ -41,9 +41,10 @@ switch (activetabs) {
             
                 $("#Admingrid").kendoGrid({
                     dataSource: {
+
                         transport: {
                             read: {
-                                url: "/readTeacher",
+                                url: "/readStudent",
                                 type: "POST",
                                 headers: {
                                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -91,6 +92,7 @@ switch (activetabs) {
                     ]
                     
                 }).data("kendoGrid");
+                 $('#Admingrid .k-pager-info').hide();
                 break;
 
                  case '#teacher':
@@ -99,7 +101,7 @@ switch (activetabs) {
                     dataSource: {
                         transport: {
                             read: {
-                                url: "/readStudent",
+                                url: "/readTeacher",
                                 type: "POST",
                                 headers: {
                                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -137,7 +139,7 @@ switch (activetabs) {
                                                          width: "200px",
                                                           title: "Email" 
                                                         },
-                                                       
+                                                        
                                                         { field: "role_name",
                                                          width: "200px",
                                                           title: "Role" 
@@ -149,6 +151,7 @@ switch (activetabs) {
                     ]
                     
                 }).data("kendoGrid");
+                  $('#Teachergrid .k-pager-info').hide();
                 break;
 
               default:
