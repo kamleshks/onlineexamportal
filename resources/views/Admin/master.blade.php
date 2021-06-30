@@ -178,7 +178,7 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4 ">
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
-    	
+      
       <img src="{{asset('dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
       <span class="brand-text font-weight-light">Online Exam</span>
@@ -192,13 +192,16 @@
           <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+         <!-- <a href="#" class="d-block">Alexander Pierce</a>-->
+         <b>Login</b>
+          
         </div>
       </div>
 
       <!-- Sidebar Menu -->
+       <div id="rootwizard_no_val">
       <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <ul class="nav nav-pills nav-sidebar flex-column " data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
               
@@ -252,21 +255,21 @@
           @endcan
         <!-- HTML for non-admins only-->
         @can('isTeacher')
-        <li class="nav-item">
-                <a href="#" class="nav-link">
+        <li class="nav-item teachers">
+                <a href="#" class="nav-link active teachers ">
                   <i class="nav-icon fas fa-th"></i>
                   <p>Teachers DashBoard</p>
                 </a>
         </li>
         <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="nav-icon fas fa-th"></i>
+                <a href="#student" class="nav-link  teachers">
+                  <i class="nav-icon fas fa-th" data-toggle="tab" id="student"></i>
                   <p>Student</p>
                 </a>
         </li>
         
-        <li class="nav-item" id="Admingrid">         
-                 <a href="#" class="nav-link">
+        <li class="nav-item ">         
+                 <a href="#teacher" class="nav-link teachers" data-toggle="tab" id="teacher">
                   <i class="nav-icon fas fa-th"></i>
                   <p>Teacher</p>
                 </a>
@@ -276,20 +279,20 @@
            <a class="nav-link"  grid-id="Admingrid">Teacher</a>
          </li> -->
         
-        <li class="nav-item">
-                <a href="#" class="nav-link">
+        <li class="nav-item ">
+                <a href="#" class="nav-link teachers">
                   <i class="nav-icon fas fa-th"></i>
                   <p>Exam</p>
                 </a>
         </li>
-        <li class="nav-item">
-                <a href="#" class="nav-link">
+        <li class="nav-item ">
+                <a href="#" class="nav-link teachers">
                   <i class="nav-icon fas fa-th"></i>
                   <p>Questions</p>
                 </a>
         </li>
-        <li class="nav-item">
-                <a href="#" class="nav-link">
+        <li class="nav-item ">
+                <a href="#" class="nav-link teachers">
                   <i class="nav-icon fas fa-th"></i>
                   <p>Schedul Exam</p>
                 </a>
@@ -313,6 +316,8 @@
 
          
       </nav>
+    </ul>
+  </div>
       <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->

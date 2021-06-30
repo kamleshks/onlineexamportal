@@ -12,9 +12,9 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\Str;
+//use Illuminate\Support\Str;
 use\Illuminate\Http\Request;
-use Auth;
+
 class RegisterController extends Controller
 {
     /*
@@ -130,21 +130,14 @@ class RegisterController extends Controller
             'user_status'=> $value,
             
         ]);
-
-        $verifyUser = VerifyUser::create([
-            'user_id' => $user->id,
-            'token' => sha1(time())
-          ]);
-          \Mail::to($user->email)->send(new VerifyMail( $user));
-         
-          //return view('emails.welcome');
-          return $user;
+        return view('login');
       }
+       
 }
 
- public function register(Request $request)
+ /*public function register(Request $request)
     {
-        $this->validator($request->all())->validate();
+       // $this->validator($request->all())->validate();
 
         event(new Registered($user = $this->create($request->all())));
 
@@ -192,7 +185,7 @@ class RegisterController extends Controller
   }
   return redirect('/login');
 }
-
+*/
 
 public function registerusers(Request $request)
 {

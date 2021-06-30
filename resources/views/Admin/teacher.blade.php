@@ -1,4 +1,27 @@
 @extends('admin.master')
+@section('style')
+ <meta charset="utf-8"/>
+   <meta name="csrf-token" content="{{ csrf_token() }}">
+   <meta name="_token" content="{{ csrf_token() }}">
+    
+    <style>html { font-size: 14px; font-family: Arial, Helvetica, sans-serif; }</style>
+    
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2020.3.915/styles/kendo.common.min.css" />
+   <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2020.3.915/styles/kendo.silver.min.css" />
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2020.3.915/styles/kendo.silver.mobile.min.css" />
+    <style>
+    #active
+{
+    font-size: 15px;
+    color:white;
+}
+#inactive{
+   font-size: 15px;
+    color:white;
+}
+</style>
+    
+@endsection
 
 @section('content')
     <!-- Content Header (Page header) -->
@@ -87,16 +110,22 @@
         </div>
         <!-- /.row -->
         <!-- Main row -->
-        <div class="row">
-          <!-- Left col -->
-          <section class="col-lg-7 connectedSortable">
-                 
-          </section>
-          <!-- right col -->
+        <div id="teacher" class="tab-pane">
+                 <div id="Teachergrid"></div>
         </div>
+        <div id="student"class="tab-pane">
+                 <div id="Admingrid"></div>
+        </div
         <!-- /.row (main row) -->
       </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->
 
+@endsection
+@section('javascript')
+ <script src="https://kendo.cdn.telerik.com/2020.3.915/js/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2020.3.915/js/kendo.all.min.js"></script> 
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+<script type="text/javascript" src="{{URL::asset('js/Admin/teacher.js?')}}"></script>
 @endsection
