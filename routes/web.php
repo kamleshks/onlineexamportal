@@ -50,6 +50,7 @@ Route::get('/admin', 'adminController@Admin');
 
 Route::post('/readTeacher', 'adminController@readAdminData');
 Route::post('/readStudent', 'adminController@readStudentData');
+Route::post('/readquestions', 'adminController@readQuestion');
 
 
 Route::get('/readAdmin', 'adminController@readAdminData');
@@ -57,6 +58,10 @@ Route::get('/activate','VerifyUserController@activeUser');
 Route::post('/activate','VerifyUserController@activeUser');
 Route::get('/deactivate','VerifyUserController@deactiveUser');
 Route::post('/deactivate','VerifyUserController@deactiveUser');
+Route::post('/importquestion','adminController@import');
+Route::get('/getstudentname','adminController@getstudentname');
+
+
 
 
 

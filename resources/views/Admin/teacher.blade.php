@@ -19,6 +19,7 @@
    font-size: 15px;
     color:white;
 }
+
 </style>
     
 @endsection
@@ -53,9 +54,9 @@
               <div class="inner">
                 
 
-                <p>Active Teacher</p>
+                <p>Active Members</p>
                 @foreach ($actives as $a)
-                   {{$a->active}}
+                  <h3> {{$a->active}}</h3>
                  @endforeach
                 
                  
@@ -63,7 +64,7 @@
               <div class="icon">
                 <i class="ion ion-bag"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+           
             </div>
           </div>
           <!-- ./col -->
@@ -71,9 +72,9 @@
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                  <p>Inactive Teacher</p>
+                  <p>Inactive Inactive</p>
                   @foreach ($actives as $a)
-                   {{$a->inactive}}
+                  <h3> {{$a->inactive}}</h3>
                  @endforeach
 
               
@@ -81,7 +82,7 @@
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              
             </div>
           </div>
           <!-- ./col -->
@@ -89,18 +90,18 @@
             <!-- small box -->
             <div class="small-box bg-warning">
               <div class="inner">
-                <h3>44</h3>
+                
 
-                <p>User Registrations</p>
+                <p>Total Teachers</p>
                  @foreach ($roles as $a)
-                   {{$a->teacher}}
+                  <h3> {{$a->teacher}}</h3>
                  @endforeach
 
               </div>
               <div class="icon">
                 <i class="ion ion-person-add"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+             
             </div>
           </div>
           <!-- ./col -->
@@ -108,30 +109,61 @@
             <!-- small box -->
             <div class="small-box bg-danger">
               <div class="inner">
-                <h3>65</h3>
+               
 
-                <p>Unique Visitors</p>
+                <p>Total Students</p>
                  @foreach ($roles as $a)
-                   {{$a->student}}
+                 <h3>  {{$a->student}}</h3>
                  @endforeach
 
               </div>
               <div class="icon">
                 <i class="ion ion-pie-graph"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
+                         </div>
           </div>
           <!-- ./col -->
         </div>
         <!-- /.row -->
         <!-- Main row -->
-        <div id="teacher" class="tab-pane">
+                <div id="teacher" class="tab-pane">
                  <div id="Teachergrid"></div>
         </div>
         <div id="student"class="tab-pane">
                  <div id="Admingrid"></div>
-        </div
+        </div>
+         <div id="exam"class="tab-pane">
+                 <div id="examgrid">
+                 <!-- <input type="text" name="tolerance"  placeholder='Question' class="k-textbox">-->
+                   </div>
+        </div>
+         <div id="#uploadQuestions"class="tab-pane">
+          </form>
+          <input type="hidden" name="id[]" value="1">
+          <div class="row" id="studdropdown">
+                            <div class="col-md-3 ">
+                                <select class="form-control" id="studentname"></select>
+                                <button class="btn btn-primary btn-sm" id="questionSubmit"  type="submit">Submit</button>
+                            </div>
+                          </div>
+        
+           <div id="files">
+            </form>
+            </div>
+            <div id="#importquestions"class="tab-pane">
+             <div class="demo-section"  id="importfile">
+               <div id="questionimport">
+                   
+                     <form  method="POST" id="formid" enctype="multipart/form-data">
+                        @csrf
+                       <input type="file" name="file" class="form-control">
+                        <br>
+                        <br>
+                        <button class="btn btn-success btn-sm" id="upload_csv"  type="submit">Import CSV or Excel File</button>
+                    </form>
+                   </div>
+             </div>
+           </div>
         <!-- /.row (main row) -->
       </div><!-- /.container-fluid -->
     </section>
@@ -141,7 +173,11 @@
 @section('javascript')
  <script src="https://kendo.cdn.telerik.com/2020.3.915/js/jquery.min.js"></script>
     <script src="https://kendo.cdn.telerik.com/2020.3.915/js/kendo.all.min.js"></script> 
+
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script src="{{asset('dist/js/kendo.dropdownlist.min.js')}}"></script>
+
 
 <script type="text/javascript" src="{{URL::asset('js/Admin/teacher.js?')}}"></script>
+
 @endsection

@@ -189,11 +189,17 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          <!--<img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">-->
         </div>
         <div class="info">
+
          <!-- <a href="#" class="d-block">Alexander Pierce</a>-->
-         <b>Login</b>
+         <b style="color:white;">Login</b>
+       </br>
+
+      <span class="brand-text font-weight-light" style="color:white;">{{ Auth::user()->name}} </span>
+          
+           </a>
           
         </div>
       </div>
@@ -280,13 +286,13 @@
          </li> -->
         
         <li class="nav-item ">
-                <a href="#" class="nav-link teachers">
+                <a href="#exam" class="nav-link teachers" data-toggle="tab" id="exam">
                   <i class="nav-icon fas fa-th"></i>
                   <p>Exam</p>
                 </a>
         </li>
         <li class="nav-item ">
-                <a href="#" class="nav-link teachers">
+                <a href="#importquestions" class="nav-link teachers">
                   <i class="nav-icon fas fa-th"></i>
                   <p>Questions</p>
                 </a>
@@ -295,6 +301,12 @@
                 <a href="#" class="nav-link teachers">
                   <i class="nav-icon fas fa-th"></i>
                   <p>Schedul Exam</p>
+                </a>
+        </li>
+        <li class="nav-item ">
+                <a href="#uploadQuestions" class="nav-link teachers data-toggle="tab id="uploadQuestions">
+                  <i class="nav-icon fas fa-th"></i>
+                  <p>Upload Questions</p>
                 </a>
         </li>
     @endcan
@@ -313,7 +325,13 @@
                 </a>
         </li>
        @endcan
-
+      
+       <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-th"></i>
+                  <p>Update Profile</p>
+                </a>
+        </li>
          
       </nav>
     </ul>

@@ -3,8 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
+use Illuminate\Support\Facades\Validator;
 use DB;
 use App\User;
+use App\Imports\Importquestion;
+use App\Questionlist;
+use Maatwebsite\Excel\Facades\Excel;
 class AdminController extends Controller
 {
     /**
@@ -105,6 +110,29 @@ class AdminController extends Controller
 
                         return response()->json($users);
                         //dd($users);
+    }
+    public function import(Request $request)
+    {
+       
+        $this->validate($request,
+       [
+       'file'=> 'required|mimes:xls,xlsx,csv'
+       ]);
+           Excel::import(new Importquestion,request()->file('file'));
+                   return response()->json(["uploded sucessfully"]);
+    }
+    public function readQuestion(){
+
+       $question= Questionlist::get();
+        return response()->json($question);
+
+
+    }
+    public function getstudentname(){
+         $user= User::Where('role',3)
+              ->get();
+               return response()->json($user);
+
     }
     
     

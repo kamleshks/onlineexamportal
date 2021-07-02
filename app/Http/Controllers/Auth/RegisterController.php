@@ -91,7 +91,7 @@ class RegisterController extends Controller
         $file_path=public_path('/Uploads/');
         $profile->move($file_path,$filename);
        
-        $value=config('status.activation_pending');
+        $value=config('status.deactivate');
         $user= User::create([
             'name' => $data['name'],
             'email' => $data['email'],
@@ -104,14 +104,7 @@ class RegisterController extends Controller
             
         ]);
 
-       /* $verifyUser = VerifyUser::create([
-            'user_id' => $user->id,
-            'token' => sha1(time())
-          ]);
-          \Mail::to($user->email)->send(new VerifyMail( $user));
-         
-          //return view('emails.welcome');
-          return $user;*/
+    
           return view('login');
 
        }
@@ -119,7 +112,7 @@ class RegisterController extends Controller
 
         else{
 
-          $value=config('status.activation_pending');
+          $value=config('status.deactivate');
         $user= User::create([
             'name' => $data['name'],
             'email' => $data['email'],
@@ -135,57 +128,7 @@ class RegisterController extends Controller
        
 }
 
- /*public function register(Request $request)
-    {
-       // $this->validator($request->all())->validate();
 
-        event(new Registered($user = $this->create($request->all())));
-
-       
-
-        return $this->registered($request, $user)
-                        ?: redirect($this->redirectPath());
-    }
-
-
-    
-      public function verifyUser($token)
-      {
-           $verifyUser = VerifyUser::where('token', $token)->first();
-              if($verifyUser){
-     
-    $user = $verifyUser->user;
-
-    if($user->user_status == 2) {
-        
-        $data=config('status.active');
-    
-      $verifyUser->user->user_status = $data;
-
-      $verifyUser->user->save();
-      
-      
-       } 
-
-    else {
-
-        $data= config('status.activation_pending');
-        
-      $verifyUser->user->user_status = $data;
-
-      $verifyUser->user->save();
-  
-    
-    }
-
-    } 
-  else {
-    
-    return redirect('/login');
-  }
-  return redirect('/login');
-}
-*/
 
 public function registerusers(Request $request)
 {
@@ -200,7 +143,7 @@ public function registerusers(Request $request)
     $file_path=public_path('/Uploads/');
     $profile->move($file_path,$filename);
    
-    $value=config('status.activation_pending');
+    $value=config('status.deactivate');
     $user= User::create([
         'name' => $request['name'],
         'email' => $request['email'],
@@ -213,22 +156,14 @@ public function registerusers(Request $request)
         
     ]);
 
-   /* $verifyUser = VerifyUser::create([
-        'user_id' => $user->id,
-        'token' => sha1(time())
-      ]);
-      \Mail::to($user->email)->send(new VerifyMail( $user));
-     
-      return view('emails.welcome');
-      //return $user;
-   }*/
+   
    return redirect('/login');
 }
 
 
     else{
 
-      $value=config('status.activation_pending');
+      $value=config('status.deactivate');
     $user= User::create([
         'name' => $request['name'],
         'email' => $request['email'],
@@ -240,14 +175,7 @@ public function registerusers(Request $request)
         
     ]);
     return redirect('/login');
-   /* $verifyUser = VerifyUser::create([
-        'user_id' => $user->id,
-        'token' => sha1(time())
-      ]);
-      \Mail::to($user->email)->send(new VerifyMail( $user));
-     
-      return view('emails.welcome');
-      //return $user;*/
+  
 
 }
 }
