@@ -116,8 +116,14 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Register') }}
                                 </button>
+                                   <button type="reset" class="btn btn-info">
+                                    {{ __('Reset') }}
+                                </button>
+
                             </div>
                         </div>
+                        <input type= "hidden" name="user_status" value="2">
+                        <input type="hidden" name="user_status" value="3">
                     </form>
                 </div>
             </div>

@@ -262,7 +262,7 @@
         <!-- HTML for non-admins only-->
         @can('isTeacher')
         <li class="nav-item teachers">
-                <a href="#" class="nav-link active teachers ">
+                <a href="#teacherdashboard" class="nav-link active teachers ">
                   <i class="nav-icon fas fa-th"></i>
                   <p>Teachers DashBoard</p>
                 </a>
@@ -285,7 +285,7 @@
            <a class="nav-link"  grid-id="Admingrid">Teacher</a>
          </li> -->
         
-        <li class="nav-item ">
+       <!-- <li class="nav-item ">
                 <a href="#exam" class="nav-link teachers" data-toggle="tab" id="exam">
                   <i class="nav-icon fas fa-th"></i>
                   <p>Exam</p>
@@ -302,7 +302,7 @@
                   <i class="nav-icon fas fa-th"></i>
                   <p>Schedul Exam</p>
                 </a>
-        </li>
+        </li>-->
         <li class="nav-item ">
                 <a href="#uploadQuestions" class="nav-link teachers data-toggle="tab id="uploadQuestions">
                   <i class="nav-icon fas fa-th"></i>
@@ -326,12 +326,12 @@
         </li>
        @endcan
       
-       <li class="nav-item">
-                <a href="#" class="nav-link">
+      <!-- <li class="nav-item">
+                <a href="#updateprofile" class="nav-link">
                   <i class="nav-icon fas fa-th"></i>
                   <p>Update Profile</p>
                 </a>
-        </li>
+        </li>-->
          
       </nav>
     </ul>

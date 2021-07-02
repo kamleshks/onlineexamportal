@@ -91,7 +91,8 @@ class RegisterController extends Controller
         $file_path=public_path('/Uploads/');
         $profile->move($file_path,$filename);
        
-        $value=config('status.deactivate');
+        $value=config('userstatus.deactivate');
+
         $user= User::create([
             'name' => $data['name'],
             'email' => $data['email'],
@@ -105,14 +106,13 @@ class RegisterController extends Controller
         ]);
 
     
-          return view('login');
-
+            return redirect('/login');
        }
 
 
         else{
 
-          $value=config('status.deactivate');
+          $value=config('userstatus.deactivate');
         $user= User::create([
             'name' => $data['name'],
             'email' => $data['email'],
@@ -123,8 +123,7 @@ class RegisterController extends Controller
             'user_status'=> $value,
             
         ]);
-        return view('login');
-      }
+          return redirect('/login');      }
        
 }
 
@@ -143,7 +142,7 @@ public function registerusers(Request $request)
     $file_path=public_path('/Uploads/');
     $profile->move($file_path,$filename);
    
-    $value=config('status.deactivate');
+    $value=config('userstatus.deactivate');
     $user= User::create([
         'name' => $request['name'],
         'email' => $request['email'],
@@ -151,7 +150,8 @@ public function registerusers(Request $request)
         'role' => $request['role'],
         'gender'=>$request['gender'],
         'dob' => $request['dob'],
-        'profile_picture'=> $filename,
+        //'user_status'=>$request['value'],
+       'profile_picture'=> $filename,
         'user_status'=> $value,
         
     ]);
@@ -162,9 +162,11 @@ public function registerusers(Request $request)
 
 
     else{
-
-      $value=config('status.deactivate');
-    $user= User::create([
+        $role=$request['role'];
+        if($role==2)
+      {
+      $value=config('userstatus.deactivate');
+       $user= User::create([
         'name' => $request['name'],
         'email' => $request['email'],
         'password' => Hash::make($request['password']),
@@ -174,6 +176,19 @@ public function registerusers(Request $request)
         'user_status'=> $value,
         
     ]);
+   }
+   else{
+    $value=config('userstatus.studentactive');
+       $user= User::create([
+        'name' => $request['name'],
+        'email' => $request['email'],
+        'password' => Hash::make($request['password']),
+        'role' => $request['role'],
+        'gender'=>$request['gender'],
+        'dob' => $request['dob'],
+        'user_status'=> $value,
+         ]);
+      }
     return redirect('/login');
   
 

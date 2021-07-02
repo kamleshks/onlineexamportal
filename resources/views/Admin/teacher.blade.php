@@ -54,7 +54,7 @@
               <div class="inner">
                 
 
-                <p>Active Members</p>
+                <p>Active Teachers</p>
                 @foreach ($actives as $a)
                   <h3> {{$a->active}}</h3>
                  @endforeach
@@ -72,7 +72,7 @@
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                  <p>Inactive Inactive</p>
+                  <p>Inactive Teachers</p>
                   @foreach ($actives as $a)
                   <h3> {{$a->inactive}}</h3>
                  @endforeach
@@ -126,6 +126,10 @@
         </div>
         <!-- /.row -->
         <!-- Main row -->
+        <div id="#teacherdashboard" class="tab-pane">
+           <div id="Teacherdashboardgrid"></div>
+                 
+        </div>
                 <div id="teacher" class="tab-pane">
                  <div id="Teachergrid"></div>
         </div>
@@ -138,19 +142,24 @@
                    </div>
         </div>
          <div id="#uploadQuestions"class="tab-pane">
-          </form>
-          <input type="hidden" name="id[]" value="1">
-          <div class="row" id="studdropdown">
+          <!--<form method="POST" id="insertquestion">-->
+         <!-- <input type="hidden" name="id[]"  id ="allcheck" value="1">-->
+          <div class="row" id="studdropdown" style="display:none;">
                             <div class="col-md-3 ">
                                 <select class="form-control" id="studentname"></select>
-                                <button class="btn btn-primary btn-sm" id="questionSubmit"  type="submit">Submit</button>
+                                <button class="btn btn-primary btn-sm saveBtn" id="questionSubmit">Submit</button>
                             </div>
                           </div>
         
            <div id="files">
-            </form>
+            <!--</form>-->
             </div>
-            <div id="#importquestions"class="tab-pane">
+            <div id="#updateprofile" class="tab-pane">
+           <div id="updateprofile"></div>
+                 
+        </div>
+
+           <!-- <div id="#importquestions"class="tab-pane">
              <div class="demo-section"  id="importfile">
                <div id="questionimport">
                    
@@ -163,7 +172,7 @@
                     </form>
                    </div>
              </div>
-           </div>
+           </div>-->
         <!-- /.row (main row) -->
       </div><!-- /.container-fluid -->
     </section>

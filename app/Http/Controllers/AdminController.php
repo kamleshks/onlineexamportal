@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use DB;
 use App\User;
+use App\Teacherassign;
 use App\Imports\Importquestion;
 use App\Questionlist;
 use Maatwebsite\Excel\Facades\Excel;
@@ -23,6 +24,11 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+    public function __construct()
+  {
+     
+      $this->middleware('auth');
+  }
 
     public function Admin()
     {
@@ -133,6 +139,43 @@ class AdminController extends Controller
               ->get();
                return response()->json($user);
 
+    }
+    public function insertquestion(Request $request){
+       $response= $request->all();
+       //dd($response);
+
+            // $savearry = $request->question_id;
+            
+              $insertArray=[];
+   
+                foreach ($request->question_id as $key => $value) {
+                   
+                    $insertArray[$key]['student_id'] = $request->student_id;
+                    $insertArray[$key]['question_id'] = $request->question_id;
+                    
+                }                
+                dd($insertArray);
+              // $insertquestions= implode(",",$insertArray);
+   
+            DB::table('teacherassigns')->insert($insertArray);
+
+
+
+
+
+
+
+
+
+         // $teacherassign = new  Teacherassign();
+         //  $teacherassign->student_id=$request->student_id;
+         //  $teacherassign->question_id=$request->question_id;
+         //  // print_r($teacherassign);
+         //  // echo "<pre>";
+         //  // die();
+          //$teacherassign->save();
+       
+        return response()->json(["saved questions"]);
     }
     
     

@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'OnlineEaxmPortal'),
+    'name' => env('APP_NAME', 'OnlineExamPortal'),
 
     /*
     |--------------------------------------------------------------------------

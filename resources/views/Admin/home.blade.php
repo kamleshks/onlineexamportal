@@ -52,18 +52,16 @@
               <div class="inner">
                 
 
-                <p>Active Teacher</p>
+                <p>Active Teachers</p>
                 @foreach ($actives as $a)
-                   {{$a->active}}
+                  <h3> {{$a->active}}</h3>
                  @endforeach
-                
                  
               </div>
               <div class="icon">
                 <i class="ion ion-bag"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
+                         </div>
           </div>
           <!-- ./col -->
           <div class="col-lg-3 col-6">
@@ -72,15 +70,14 @@
               <div class="inner">
                   <p>Inactive Teacher</p>
                   @foreach ($actives as $a)
-                   {{$a->inactive}}
+                  <h3> {{$a->inactive}}</h3>
                  @endforeach
-
               
               </div>
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            
             </div>
           </div>
           <!-- ./col -->
@@ -88,18 +85,15 @@
             <!-- small box -->
             <div class="small-box bg-warning">
               <div class="inner">
-                <h3>44</h3>
-
-                <p>User Registrations</p>
+                  <p>Total Teachers</p>
                  @foreach ($roles as $a)
-                   {{$a->teacher}}
+                  <h3> {{$a->teacher}}</h3>
                  @endforeach
-
               </div>
               <div class="icon">
                 <i class="ion ion-person-add"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+           
             </div>
           </div>
           <!-- ./col -->
@@ -107,18 +101,18 @@
             <!-- small box -->
             <div class="small-box bg-danger">
               <div class="inner">
-                <h3>65</h3>
+               
 
-                <p>Unique Visitors</p>
+                <p>Total Students</p>
                  @foreach ($roles as $a)
-                   {{$a->student}}
+                 <h3>  {{$a->student}}</h3>
                  @endforeach
 
               </div>
               <div class="icon">
                 <i class="ion ion-pie-graph"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+             
             </div>
           </div>
           <!-- ./col -->
